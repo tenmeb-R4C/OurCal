@@ -1,0 +1,620 @@
+/* ============================================================
+   OurCal - Stylesheet
+   Warm, elegant design with cohesive palette
+   Module 7: selectors, box model, hover, float
+   Module 9: responsive, media queries
+   CSS3: transition, transform, gradient, box-shadow, border-radius
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- Base --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f5f0eb;
+    color: #3d3d3d;
+    line-height: 1.6;
+    margin: 0;
+    /* Sticky footer (Module 9 Flexbox): body is a flex column at least the viewport height */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; }
+a:hover { text-decoration: none; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+    background-color: #1b2a4a !important;
+    padding: 0 25px;
+    box-shadow: 0 3px 15px rgba(27,42,74,0.3);
+    border-bottom: 3px solid #e07a5f;
+    min-height: 56px;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.navbar-brand { color: #f5f0eb !important; }
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #c4cad4 !important;
+    padding: 16px 14px !important;
+    transition: all 0.25s ease;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    margin: 0;
+}
+
+.nav-link:hover {
+    color: #e07a5f !important;
+    border-bottom-color: #e07a5f;
+    background: transparent;
+}
+
+.nav-link.active {
+    color: #e07a5f !important;
+    border-bottom-color: #e07a5f;
+    background: transparent !important;
+    font-weight: 600;
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+.page-header {
+    background-color: #1b2a4a;
+    color: #f5f0eb;
+    padding: 45px 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 4px solid #e07a5f;
+}
+
+.page-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.page-header p {
+    font-weight: 300;
+    margin: 10px 0 0;
+    color: #e07a5f;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   STAT CARDS
+   ============================================================ */
+.stat-card-link { display: block; color: inherit; }
+.stat-card-link:hover { color: inherit; text-decoration: none; }
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e6e0d8;
+    border-left: 5px solid #d4cdc5;
+    border-top: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.stat-card.card-events  { border-left-color: #3d8b7a; }
+.stat-card.card-groups  { border-left-color: #e07a5f; }
+.stat-card.card-invites { border-left-color: #d4a64e; }
+.stat-card.card-users   { border-left-color: #5b7db1; }
+
+.stat-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 20px;
+    gap: 16px;
+}
+
+.stat-icon-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.stat-info { text-align: center; }
+
+.stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #1b2a4a;
+}
+
+.stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #7a7a7a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 6px;
+}
+
+/* ============================================================
+   DASHBOARD CARDS
+   ============================================================ */
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e6e0d8;
+}
+
+.dashboard-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background-color: #1b2a4a;
+    color: #f5f0eb;
+    border-bottom: none;
+}
+
+.dashboard-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #f5f0eb;
+}
+
+.dashboard-card-action {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #e07a5f;
+}
+
+.dashboard-card-action:hover {
+    color: #f5a088;
+    text-decoration: none;
+}
+
+.dashboard-card-body { padding: 0; }
+.dashboard-card-body .table { margin: 0; }
+
+.dashboard-card-body .table thead th {
+    background-color: #f0ece7;
+    color: #5a5a5a;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 12px 18px;
+    border-bottom: 2px solid #e6e0d8;
+}
+
+.dashboard-card-body .table tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0ece7;
+    font-size: 0.85rem;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 45px 20px;
+    background-color: #faf8f5;
+    border-top: 1px solid #f0ece7;
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.empty-state-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #8f877d;
+    margin-bottom: 5px;
+}
+
+/* ============================================================
+   SEARCH BOX
+   ============================================================ */
+.search-box {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 8px;
+    border: 1px solid #e6e0d8;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.search-box label {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #1b2a4a;
+}
+
+/* ============================================================
+   CONTENT CARD (table wrapper for other pages)
+   ============================================================ */
+.content-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 22px;
+    border: 1px solid #e6e0d8;
+}
+
+/* ============================================================
+   SECTION TITLE
+   ============================================================ */
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1b2a4a;
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 4px solid #e07a5f;
+}
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+.form-control, .form-control-sm {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    border-radius: 4px;
+    border: 1.5px solid #ddd6cc;
+    background-color: #faf8f5;
+    transition: all 0.25s ease;
+}
+
+.form-control:focus {
+    border-color: #e07a5f;
+    box-shadow: 0 0 0 3px rgba(224,122,95,0.12);
+    background-color: #ffffff;
+}
+
+label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #5a5a5a;
+    margin-bottom: 4px;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+.table-responsive { overflow-x: auto; }
+.table { font-family: 'Poppins', sans-serif; font-size: 0.84rem; margin-bottom: 0; }
+
+.table thead th {
+    background-color: #1b2a4a;
+    color: #d4cdc5;
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    white-space: nowrap;
+    padding: 14px 14px;
+}
+
+.table tbody td {
+    padding: 13px 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0ece7;
+    color: #4a4a4a;
+}
+
+.table tbody tr { transition: background-color 0.2s ease; }
+.table tbody tr:hover { background-color: #fdf5ef; }
+.table-striped tbody tr:nth-child(even) { background-color: #faf8f5; }
+.table-striped tbody tr:nth-child(even):hover { background-color: #fdf5ef; }
+
+.table-sm td, .table-sm th { padding: 9px 12px; font-size: 0.82rem; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    padding: 9px 20px;
+    border: none;
+    letter-spacing: 0.3px;
+}
+
+.btn-primary {
+    background-color: #e07a5f;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(224,122,95,0.3);
+}
+.btn-primary:hover {
+    background-color: #c45a3f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(224,122,95,0.35);
+}
+
+.btn-warning {
+    background-color: #d4a64e;
+    color: #ffffff;
+    font-size: 0.78rem;
+    padding: 5px 13px;
+}
+.btn-warning:hover {
+    background-color: #b8893a;
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+    color: #ffffff;
+    font-size: 0.78rem;
+    padding: 5px 13px;
+    border-radius: 4px;
+}
+.btn-delete:hover {
+    background-color: #a33025;
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #b0a89e;
+    color: #ffffff;
+}
+.btn-secondary:hover { background-color: #8f877d; color: #ffffff; }
+
+.btn-success {
+    background-color: #3d8b7a;
+    border: none;
+    color: #ffffff;
+}
+.btn-success:hover { background-color: #2e6e60; transform: translateY(-1px); }
+
+.btn-info {
+    background-color: #5b7db1;
+    border: none;
+    color: #ffffff;
+    font-size: 0.78rem;
+    padding: 5px 13px;
+}
+.btn-info:hover { background-color: #496a9a; transform: translateY(-1px); color: #ffffff; }
+
+.btn-danger {
+    background-color: #c0392b;
+    border: none;
+    color: #ffffff;
+}
+.btn-danger:hover { background-color: #a33025; }
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    letter-spacing: 0.3px;
+}
+
+.badge-info    { background-color: #5b7db1; color: #ffffff; }
+.badge-success { background-color: #3d8b7a; color: #ffffff; }
+.badge-warning { background-color: #d4a64e; color: #ffffff; }
+.badge-danger  { background-color: #c0392b; color: #ffffff; }
+.badge-primary { background-color: #1b2a4a; color: #f5f0eb; }
+.badge-secondary { background-color: #8f877d; color: #ffffff; }
+
+.tag-badge {
+    background-color: #f5f0eb;
+    color: #6b5e52;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin: 1px 2px;
+    display: inline-block;
+    border: 1px solid #e6e0d8;
+}
+
+/* ============================================================
+   PROFILE
+   ============================================================ */
+.profile-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 40px 25px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    border: 1px solid #e6e0d8;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1b2a4a, #3d5a80);
+    color: #f5f0eb;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 100px;
+    margin: 0 auto 18px;
+    box-shadow: 0 4px 15px rgba(27,42,74,0.25);
+}
+
+.profile-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1b2a4a;
+    margin-bottom: 5px;
+}
+
+.profile-role { color: #9a9a9a; font-size: 0.85rem; margin-bottom: 18px; }
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 22px;
+    border-bottom: 1px solid #f0ece7;
+    transition: background 0.2s ease;
+}
+.setting-item:hover { background-color: #faf8f5; }
+.setting-item:last-child { border-bottom: none; }
+.setting-label { font-weight: 600; color: #5a5a5a; font-size: 0.88rem; }
+.setting-value { color: #1b2a4a; font-weight: 500; }
+
+/* ============================================================
+   FLASH MESSAGES
+   ============================================================ */
+.flash-msg {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 0.88rem;
+}
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+.modal-content {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #1b2a4a;
+    color: #f5f0eb;
+    border: none;
+    padding: 18px 24px;
+    border-bottom: 3px solid #e07a5f;
+}
+
+.modal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.modal-header .close span { color: #f5f0eb; text-shadow: none; font-size: 1.4rem; }
+.modal-body { padding: 25px; background-color: #faf8f5; }
+.modal-footer { border-top: 1px solid #e6e0d8; padding: 14px 24px; background-color: #ffffff; }
+
+/* ============================================================
+   REMINDER BADGES
+   ============================================================ */
+.rem-email { background: #dce8f5; color: #1b2a4a; border: 1px solid #b0c4de; }
+.rem-push  { background: #d8edde; color: #2e6e60; border: 1px solid #a5d6b3; }
+.rem-sms   { background: #f5ead0; color: #7a5c1e; border: 1px solid #e8d4a0; }
+.rem-inapp { background: #e8ddf5; color: #4a2e7a; border: 1px solid #c4b0de; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+    background-color: #1b2a4a;
+    color: #7a8599;
+    padding: 22px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    border-top: 3px solid #e07a5f;
+    /* Sticky footer trick: in a flex column, margin-top:auto absorbs all leftover space */
+    margin-top: auto;
+    flex-shrink: 0;
+}
+.site-footer p { margin: 0; }
+
+/* ============================================================
+   RESPONSIVE (Module 9)
+   ============================================================ */
+
+@media screen and (max-width: 575px) {
+    .page-header { padding: 30px 15px; }
+    .page-header h2 { font-size: 1.4rem; }
+    .page-header p { font-size: 0.85rem; }
+
+    .stat-card-inner { padding: 22px 12px; gap: 10px; }
+    .stat-icon-circle { width: 60px; height: 60px; font-size: 2rem; }
+    .stat-number { font-size: 1.7rem; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 1px; }
+
+    .search-box .row > div { margin-bottom: 8px; }
+    .table { font-size: 0.76rem; }
+    .table thead th { font-size: 0.66rem; padding: 10px 10px; }
+    .table tbody td { padding: 9px 10px; }
+    .btn { font-size: 0.78rem; padding: 6px 12px; }
+    .btn-warning, .btn-delete, .btn-info { font-size: 0.7rem; padding: 4px 8px; }
+    .profile-card { padding: 22px 15px; }
+    .profile-avatar { width: 75px; height: 75px; font-size: 1.6rem; line-height: 75px; }
+    .modal-body { padding: 16px; }
+    .dashboard-card-header { padding: 12px 16px; }
+    .empty-state { padding: 30px 15px; }
+    .empty-state-icon { font-size: 2.2rem; }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .page-header h2 { font-size: 1.7rem; }
+    .stat-number { font-size: 1.8rem; }
+}
+
+@media screen and (min-width: 992px) {
+    .container-fluid { max-width: 1400px; }
+}
+
+img { max-width: 100%; height: auto; }
