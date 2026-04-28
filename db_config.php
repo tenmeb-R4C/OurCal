@@ -17,9 +17,9 @@ $db_password = "";
 $db_name     = "OurCal";
 
 // --- AWS RDS (uncomment to use) ---
-// $db_host     = "your-rds-endpoint.us-east-1.rds.amazonaws.com";
+// $db_host     = "our-rds-endpoint.us-east-1.rds.amazonaws.com";
 // $db_user     = "admin";
-// $db_password = "your_rds_password";
+// $db_password = "our_rds_password";
 // $db_name     = "OurCal";
 
 $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
