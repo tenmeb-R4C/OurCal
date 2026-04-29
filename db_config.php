@@ -6,8 +6,8 @@
 //
 // For LOCAL XAMPP:
 //   Host = "localhost", User = "root", Password = "", Database = "OurCal"
-// For AWS RDS (bonus):
-//   Uncomment the RDS section below and comment out XAMPP section
+// For AWS RDS:
+//  The commented part for hosting
 // ============================================================
 
 // --- XAMPP (Local) ---
@@ -16,7 +16,7 @@ $db_user     = "root";
 $db_password = "";
 $db_name     = "OurCal";
 
-// --- AWS RDS (uncomment to use) ---
+// --- AWS RDS (we have updated this section when hosting web online ---
 // $db_host     = "our-rds-endpoint.us-east-1.rds.amazonaws.com";
 // $db_user     = "admin";
 // $db_password = "our_rds_password";
@@ -31,7 +31,7 @@ $conn->set_charset("utf8mb4");
 // ============================================================
 // CURRENT USER — simulates a logged-in user
 // The user switcher dropdown sends ?switch_user=ID via GET
-// In a real app this would come from PHP sessions (beyond our scope)
+// In a real app this would come from PHP sessions (and this is beyond our scope)
 // ============================================================
 $current_user_id = 1; // default user
 
