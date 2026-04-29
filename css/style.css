@@ -1,8 +1,6 @@
 /* ============================================================
    OurCal - Stylesheet
    Warm, elegant design with cohesive palette
-   Module 7: selectors, box model, hover, float
-   Module 9: responsive, media queries
    CSS3: transition, transform, gradient, box-shadow, border-radius
    ============================================================ */
 
@@ -21,7 +19,7 @@ body {
     color: #3d3d3d;
     line-height: 1.6;
     margin: 0;
-    /* Sticky footer (Module 9 Flexbox): body is a flex column at least the viewport height */
+    /* Sticky footer: body is a flex column at least the viewport height */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
