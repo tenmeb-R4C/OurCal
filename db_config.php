@@ -22,6 +22,8 @@ $db_name     = "OurCal";
 // $db_password = "our_rds_password";
 // $db_name     = "OurCal";
 
+//http://3.208.9.107  (visit this public site to open web) 
+
 $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
